@@ -30,7 +30,7 @@ def request_artist():
     )
 
     if artist_data.year < "1900" or artist_data.year > "2020":
-        return "Ошибка. Неправильный формат года выпуска альбома."
+        return HTTPError(404, "Ошибка. Неправильный формат года выпуска альбома.")
     else:
         return album.save(artist_data)
 
